@@ -5,10 +5,10 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="mmysqlPU" />
+          <factory-entry name="mysqlPU" />
         </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/H_02/src/MATA_INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -21,5 +21,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Hibernate-All_required_jars" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.16" level="project" />
+    <orderEntry type="module" module-name="SchoolManagementSystem" />
   </component>
 </module>

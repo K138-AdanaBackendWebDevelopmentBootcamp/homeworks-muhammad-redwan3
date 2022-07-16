@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 public class Main {
-
     public static void main(String[] args) {
+
         Student Student_101=new Student("muhammed",LocalDate.of(1995, 4,22),"gaziantep","male");
 
         Course Course_101 = new Course("Mathematics", "MATH", 8);

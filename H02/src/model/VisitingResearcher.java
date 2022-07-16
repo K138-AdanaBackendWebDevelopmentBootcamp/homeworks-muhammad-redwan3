@@ -1,10 +1,15 @@
-package SchoolManagementSystem;
+package model;
 
+import javax.persistence.Entity;
+import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class VisitingResearcher extends Instructor {
     private double hourly_salary;
 
+    public VisitingResearcher() {
+    }
 
 
     public double getHourly_salary() {
@@ -15,8 +20,8 @@ public class VisitingResearcher extends Instructor {
         this.hourly_salary = hourly_salary;
     }
 
-    public VisitingResearcher(String name, String address, String phone_number, double hourly_salary) {
-        super(name, address, phone_number);
+    public VisitingResearcher(String name, String address, String phone_number, List<Course> courseList, double hourly_salary) {
+        super(name, address, phone_number, courseList);
         this.hourly_salary = hourly_salary;
     }
 

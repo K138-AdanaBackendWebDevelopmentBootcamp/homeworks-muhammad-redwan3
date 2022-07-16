@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Hibernate-All_required_jars">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Hibernate-All_required_jars" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Hibernate-All_required_jars" recursive="false" />
+  </library>
+</component>

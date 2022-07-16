@@ -1,17 +1,24 @@
-package SchoolManagementSystem;
+package model;
 
+import javax.persistence.Entity;
+import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class PermanentInstructor extends Instructor {
   private double fixed_salary;
 
-    public PermanentInstructor(String name, String address, String phone_number, double fixed_salary) {
-        super(name, address, phone_number);
+    public PermanentInstructor(String name, String address, String phone_number, List<Course> courseList, double fixed_salary) {
+        super(name, address, phone_number, courseList);
         this.fixed_salary = fixed_salary;
     }
 
     public PermanentInstructor(double fixed_salary) {
         this.fixed_salary = fixed_salary;
+    }
+
+    public PermanentInstructor() {
+
     }
 
     public double getFixed_salary() {

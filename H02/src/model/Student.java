@@ -1,38 +1,57 @@
-package SchoolManagementSystem;
+package model;
 
 
+import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
+@Entity
 public class Student {
-
+    @Id    // the primary key of this object(raw) of the class(table)  // (DB keyword)
+    @GeneratedValue(generator = "student",strategy = GenerationType.SEQUENCE)  // to generate anh id automatically added this annotation
+    @SequenceGenerator(name = "student" ,sequenceName = "STUDENT_SEQ_ID")
+    private long id;
     private String name ;
     private LocalDate date;
     private String address;
     private String gender;
-    public Student(String name, LocalDate date, String address, String gender) {
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
+
+    public Student(long id, String name, LocalDate date, String address, String gender, List<Course> courseList) {
+        this.id = id;
         this.name = name;
         this.date = date;
         this.address = address;
         this.gender = gender;
+        this.courseList = courseList;
     }
 
-    private final List<Course> CouresList = new ArrayList<>();
-
-
-
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, date, address, gender, CouresList);
-    }
-
-    Student()
-    {
+    @ManyToMany(targetEntity = Course.class,fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Course> courseList;
+    public Student() {
 
     }
+
+
+
+
+
     @Override
     public String toString() {
         return "Student{" +
