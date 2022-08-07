@@ -1,23 +1,27 @@
 # Credit Application System
 
 
-### Reference Documentation
+### Kurallar
 
-For further reference, please consider the following sections:
+Sisteme yeni kullanıcılar tanımlanabilir, mevcut müşteriler güncellenebilir veya
+silinebilir.
+<br>
+● Kredi skoru 500’ün altında ise kullanıcı reddedilir. (Kredi sonucu: Red)<br>
+● Krediskoru 500 puanile 1000 puanarasındaiseveaylıkgeliri5000TL’ninaltında ise
+kullanıcınınkredibaşvurusuonaylanır vekullanıcıya 10.000 TLlimitatanır. (Kredi
+Sonucu: Onay)<br>
+● Krediskoru 500 puanile 1000 puanarasındaiseveaylıkgeliri5000TL’ninüstünde
+isekullanıcınınkredibaşvurusuonaylanır vekullanıcıya 20.000TL limitatanır. (Kredi
+Sonucu: Onay) <br>
+● Kredi skoru 1000 puana eşit veya üzerinde ise kullanıcıya AYLIKGELİR BİLGİSİ*
+KREDİ LİMİT ÇARPANI kadar limit atanır. (Kredi Sonucu: Onay)<br>
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.2/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.2/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#data.sql.jpa-and-spring-data)
+● Kredininneticelenmesisonucundailgilibaşvuruveritabanınakaydedilir. Daha
+sonrasında ise ilgili telefon numarasına bilgilendirme SMS’i gönderilir ve
+endpoint’ten onay durum bilgisi(red veya onay), limit bilgisi dönülür.<br>
+● Gerçekleştirilmiş bir kredi başvurusu sadece kimlik numarası ile sorgulanabilir.<br>
 
-### Guides
-
-The following guides illustrate how to use some features concretely:
-
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+● Varsayılan kredi skor servisinin T.C.Kimlik numaralarının son rakamına göre
+aşağıdaki skorları döneceği varsayılacaktır; (sonu tek sayı ile biten T.C.Kimlik
+numaraları hatalı olduğu varsayılacaktır);<br>
 
