@@ -19,7 +19,7 @@ public class UserController {
     }
     @GetMapping
     @Transactional(readOnly = true)
-    public ResponseEntity getUsers(@RequestParam(required = false,defaultValue = "databaseId") String sortBy,@RequestParam(required = false,defaultValue = "true") Boolean ascending){
+    public ResponseEntity getUsers(){
         try {
             return ResponseEntity.ok(userService.getUsers());
         }catch (Exception e){

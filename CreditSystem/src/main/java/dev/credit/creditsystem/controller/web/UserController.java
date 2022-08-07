@@ -23,7 +23,7 @@ public class UserController {
 
     @GetMapping(value = "")
     @Transactional(readOnly = true)
-    public String getUsers(Model model, @RequestParam(required = false,defaultValue = "Id") String sortBy, @RequestParam(required = false,defaultValue = "true") Boolean ascending){
+    public String getUsers(Model model){
         List<User> userList = service.getUsers();
         model.addAttribute("excMsg",exMess);
         model.addAttribute("BUI",UpdatedInfo);
