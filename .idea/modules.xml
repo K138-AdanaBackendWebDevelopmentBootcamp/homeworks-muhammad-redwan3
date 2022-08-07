@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CreditSystem/CreditSystem.iml" filepath="$PROJECT_DIR$/CreditSystem/CreditSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/H02/H02.iml" filepath="$PROJECT_DIR$/H02/H02.iml" />
-      <module fileurl="file://$PROJECT_DIR$/H03/H03.iml" filepath="$PROJECT_DIR$/H03/H03.iml" />
       <module fileurl="file://$PROJECT_DIR$/SchoolManagementSystem/SchoolManagementSystem.iml" filepath="$PROJECT_DIR$/SchoolManagementSystem/SchoolManagementSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/kodluyoruz.iml" filepath="$PROJECT_DIR$/kodluyoruz.iml" />
     </modules>
