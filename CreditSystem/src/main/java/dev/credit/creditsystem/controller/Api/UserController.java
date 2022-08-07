@@ -21,7 +21,7 @@ public class UserController {
     @Transactional(readOnly = true)
     public ResponseEntity getUsers(@RequestParam(required = false,defaultValue = "databaseId") String sortBy,@RequestParam(required = false,defaultValue = "true") Boolean ascending){
         try {
-            return ResponseEntity.ok(userService.getUsersSorted(sortBy, ascending));
+            return ResponseEntity.ok(userService.getUsers());
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
@@ -46,7 +46,6 @@ public class UserController {
         }catch(NotFoundException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
-
     }
     @PostMapping
     @Transactional

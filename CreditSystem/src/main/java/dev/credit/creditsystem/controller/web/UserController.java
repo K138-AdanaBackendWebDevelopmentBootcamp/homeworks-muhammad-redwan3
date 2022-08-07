@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -20,7 +21,17 @@ public class UserController {
     private String UpdatedInfo ;
     public String exMess;
 
-
+    @GetMapping(value = "")
+    @Transactional(readOnly = true)
+    public String getUsers(Model model, @RequestParam(required = false,defaultValue = "Id") String sortBy, @RequestParam(required = false,defaultValue = "true") Boolean ascending){
+        List<User> userList = service.getUsers();
+        model.addAttribute("excMsg",exMess);
+        model.addAttribute("BUI",UpdatedInfo);
+        model.addAttribute("users",userList);
+        UpdatedInfo="";
+        exMess="";
+        return "users";
+    }
     @GetMapping(value = "/")
     public String fallback(){
         return "app";

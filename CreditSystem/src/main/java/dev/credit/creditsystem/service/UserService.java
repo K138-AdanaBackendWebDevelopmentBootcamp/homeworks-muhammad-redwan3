@@ -21,20 +21,6 @@ public class UserService {
     public List<User> getUsers() {
         return userRepository.findAll();
     }
-    public List<User> getUsersSorted(String sortBy,Boolean direction){
-        switch (sortBy){
-            case "fullName":
-            case "identityNumber":
-            case "salary":
-            case"phoneNumber" :
-            case"databaseId" :
-                this.userList = userRepository.findAll(Sort.by(direction?Sort.Direction.ASC:Sort.Direction.DESC,sortBy));
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + sortBy);
-        }
-        return userList;
-    }
 
     public User getUserById(long Id) throws NotFoundException {
         if(userRepository.findById(Id).isPresent()) {
